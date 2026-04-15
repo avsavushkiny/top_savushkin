@@ -1,14 +1,28 @@
 ﻿using System;
 
-namespace Poker
+namespace App
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            int value = 0;
-            value = int.Parse(Console.ReadLine());
-            Console.WriteLine(value);
+            Console.WriteLine("Hello, World! Saransk здесь был я");
+            
+            int a =  Convert.ToInt32(Console.ReadLine());
+    
+
+            switch (a)
+            {
+                case 100:
+                    Console.WriteLine("круглый");
+                    break;
+                case 10:
+                    Console.WriteLine("округлый");
+                    break;
+                default:
+                    Console.WriteLine("шарообразный");
+                break;
+            }
         }
     }
 }
