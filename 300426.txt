@@ -1,0 +1,77 @@
+using System;
+
+namespace App //Пространство имен для организации кода
+{
+
+    class Program //Главный класс программы
+    {
+        static void Main(string[] args) // Точка входа в программу, static можно запустить main без создания объекта
+        {
+            var Student1 = new Student(67.ToString());
+            Student1.Print();
+            // var Student2 = new Student("Урбульбек", 67);
+            // Student Student3 = Student1;
+
+            // Student3.Age = -1;    
+        }
+
+    }
+    
+    public class Student
+    {
+        public string Name { get; set; } // Автоматическое свойство для Name, get — чтение и set — запись.
+
+        private int  _age; // приватное поле 
+        
+        public int Age
+        {
+            get =>_age; //get — возвращает значение 
+            
+            set // set - проверка 
+            
+            {
+                if(value >= 0)
+                {
+                    _age = value; // value — ключевое слово, содержащее передаваемое значение.
+                }
+                else 
+                {
+                    throw new ArgumentException("Возраст не может быть отрицательным!");
+                }
+            }
+            
+        }
+
+        public void Print()
+        {
+            Console.WriteLine(Name);
+            Console.WriteLine(_age);
+        }
+
+        
+        public Student(string name = "name", int age = 0) //конструктор
+        {
+            Name = name; // устанавливем значение для Name 
+            Age = age; // устанавливем значение для Age  проходит валидацию через set
+
+        }
+        public Student()
+        {
+            Name = "Ivan Zolo"; // устанавливем значение для Name 
+            Age = 5;
+        }
+        
+        ~Student()
+        {
+            Console.WriteLine("эх блин");
+        }
+    }
+}
+
+// Ключевые концепции данного примера
+
+// Инкапсуляция.
+// Валидация данных.
+// Защита от установки отрицательного возраста.
+// Ключевая концепция — исключение при ошибке throw new ArgumentException("Возраст не может быть отрицательным!");
+// Инициализация

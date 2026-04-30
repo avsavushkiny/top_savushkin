@@ -1,28 +1,30 @@
 ﻿using System;
+using System.Collections.Generic; // Для краткости в коде
 
-namespace App
+namespace MyApp.Utilities
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World! Saransk здесь был я");
             
-            int a =  Convert.ToInt32(Console.ReadLine());
-    
+        }
+    }
 
-            switch (a)
-            {
-                case 100:
-                    Console.WriteLine("круглый");
-                    break;
-                case 10:
-                    Console.WriteLine("округлый");
-                    break;
-                default:
-                    Console.WriteLine("шарообразный");
-                break;
-            }
+    public class StringHelper
+    {
+        public void PrintMessage(string msg)
+        {
+            // Используем using System; и пользуемся "коротким" именем
+            Console.WriteLine(msg);
+        }
+
+        public List<string> GetList()
+        {
+            // Используем using System.Collections.Generic;
+            var list = new List<string>();
+            list.Add("Hello");
+            return list;
         }
     }
 }
